@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery 1 example</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $("#btnFirst").click(function () {
+          $("p, #department").css("background-color", "lightblue");
+        });
+        $("#btnSecond").hover(function () {
+          $(this).css("background-color", "orange");
+        });
+      });
+      $(document).ready(function () {
+        $("#header, [class=odd]").css("background-color", "violet");
+      });
+      $(document).ready(function () {
+        $("input").focus(function () {
+          $(this).css("background-color", "lightgrey");
+        });
+        $("input").blur(function () {
+          $(this).css("background-color", "white");
+        });
+      });
+      $(document).ready(function () {
+        $("#btnClick").click(function () {
+          $("[class], [id^=first]").css("color", "red");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Lists and Buttons</h1>
+    <ol class="subject">
+      <li id="sub1">English</li>
+      <li id="sub2">French</li>
+      <li id="sub3">German</li>
+      <li id="sub4">Math</li>
+      <li id="sub5">History</li>
+      <li id="sub6">Geography</li>
+    </ol>
+    <ul id="department">
+      <li>Sales</li>
+      <li>Production</li>
+      <li>HR</li>
+      <li>IT service</li>
+    </ul>
+    <p id="firstPara">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ac quam
+      auctor, pulvinar lacus id, auctor ex. In hac habitasse platea dictumst.
+      Donec sed magna quis erat venenatis ullamcorper quis nec velit.
+    </p>
+    <p id="secondPara">Lorem ipsum dolor sit amet</p>
+    <button id="btnFirst">First</button>
+    <button id="btnSecond">Second</button>
+    <br />
+    <br />
+    <table>
+      <tr id="header">
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+      </tr>
+      <tr class="odd">
+        <td>1</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>mark@mdo</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>Thornton@saw.com</td>
+      </tr>
+      <tr class="odd">
+        <td>3</td>
+        <td>Larry</td>
+        <td>Bird</td>
+        <td>Bird@email.com</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Jacob</td>
+        <td>Donton</td>
+        <td>Donton@gol.at</td>
+      </tr>
+      <tr class="odd">
+        <td>5</td>
+        <td>Garry</td>
+        <td>Third</td>
+        <td>Third@email.com</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Jacob</td>
+        <td>Thorn</td>
+        <td>Thorn@email.com</td>
+      </tr>
+      <tr class="odd">
+        <td>7</td>
+        <td>Larry</td>
+        <td>Tird</td>
+        <td>Tird@email.com</td>
+      </tr>
+    </table>
+    <br /><br />
+    <label for="fName">First Name:</label>
+    <input type="text" id="fName" /><br />
+    <label for="lName">Last Name:</label>
+    <input type="text" id="lName" /><br />
+    <button type="submit" id="submit">Submit</button>
+    <br /><br />
+    <p id="first-para" class="paras">
+      First Article, First Article, First Article, First Article
+    </p>
+    <p id="second-para" class="paras">
+      Second Article, second Article, second Article, First Article
+    </p>
+    <p id="third-para" class="paras">
+      Third Article, Third Article, Third Article, Third Article
+    </p>
+    <div id="firstDiv">First Div</div>
+    <div id="secondDiv">Second Div</div>
+    <div id="thirdDiv">Third Div</div>
+    <div id="fourthDiv">Fourth Div</div>
+    <div id="fifthDiv">Fifth Div</div>
+    <br /><br />
+    <button id="btnClick">Click</button>
+  </body>
+</html>
