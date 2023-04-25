@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings</title>
+  </head>
+  <body>
+    <h1>Working with Strings</h1>
+    <script type="text/javascript">
+      const airline = "TAP Air Portugal";
+      const plane = "AS30";
+      console.log(plane[0]);
+      //strings have methods similar to array methods like indexOf:
+      console.log(airline.indexOf("r"));
+      console.log(airline.lastIndexOf("r"));
+      console.log(airline.slice(4));
+      //we use slices to extract separate words from the long string
+
+      console.log(airline.slice(0, airline.indexOf(" ")));
+
+      const checkMiddleSeat = function (seat) {
+        const s = seat.slice(-1);
+        if (s === "B" || s === "E") console.log("You got middle seat");
+        else console.log("you are lucky");
+      };
+      // B and E are middle seats
+      checkMiddleSeat("11B");
+      checkMiddleSeat("12C");
+      checkMiddleSeat("13B");
+      checkMiddleSeat("14D");
+
+      console.log(new String("irina"));
+      console.log(typeof new String("irina"));
+
+      const myName = "aniri";
+      console.log(myName.toUpperCase());
+      console.log(myName[0].toUpperCase() + myName.slice(1));
+
+      //comparing emails:
+      const email = "hello@gmail.com";
+      const loginEmail = "   HeLLo@gmail.com \n";
+      const lowerLoginEmail = loginEmail.toLowerCase();
+      const trimmedEmail = lowerLoginEmail.trim();
+      console.log(trimmedEmail);
+
+      const normaliedEmail = loginEmail.toLocaleLowerCase().trim();
+      console.log("normalized in one line: ", normaliedEmail);
+      console.log(email === normaliedEmail);
+
+      //replacing the strings:
+
+      const priceGB = "288,97p";
+      const priceUS = priceGB.replace("p", "$").replace(",", ".");
+      console.log(priceUS);
+
+      const plane1 = "A320";
+      console.log(plane1.includes("A3"));
+      console.log(plane1.startsWith("A") && plane1.endsWith("0"));
+
+      //split allows to split a sting into multiple parts based on divider:
+
+      console.log("a+very+nice+string".split("+"));
+      console.log("my name is irina".split(" "));
+      const [firstName, lastName] = "Jonas Schrumberg".split(" ");
+      const newName = ["Mr.", firstName, lastName].join(" ");
+      console.log(newName);
+
+      const capitalizeName = function (name) {
+        const names = name.split(" ");
+        const namesUpper = [];
+        for (const n of names) {
+          namesUpper.push(n[0].toUpperCase() + n.slice(1));
+        }
+        console.log(namesUpper.join(" "));
+      };
+      capitalizeName("jessica ann smith davis");
+
+      //padding a string
+      const message = "Go to data";
+      console.log(message.padStart(25, "+").padEnd(35, "+"));
+
+      const maskCreditCard = function (number) {
+        const str = number + " ";
+        const last = str.slice(-5);
+        return last.padStart(str.length, "*");
+      };
+      console.log(maskCreditCard(432345456754));
+      console.log(maskCreditCard("764392432345456"));
+      //repeat method
+      const weatherMessage = "Bad weather, all departures are late... ";
+
+      console.log(weatherMessage.repeat(5));
+    </script>
+  </body>
+</html>

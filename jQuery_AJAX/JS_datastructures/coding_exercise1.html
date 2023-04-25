@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        background-color: rgb(208, 208, 242);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Coding Exercise to transform Strings</h1>
+    <p>Reformatting String drom under_score to a camelCase</p>
+    <script type="text/javascript">
+      /* write a program that receives a list of variable names written in underscore_case
+            and convert them to camelCase. The input will come from a textarea inserted into the DOM, and the conversion will happen when the button is pressed. The following data are posted to the textarea:
+      underscore_case
+      first_name
+      Some_variable
+      calculate_age
+      delayed_departure*/
+
+      document.body.append(document.createElement("textarea"));
+      document.body.append(document.createElement("button"));
+
+      document.querySelector("button").addEventListener("click", function () {
+        const text = document.querySelector("textarea").value;
+        const rows = text.split("\n");
+
+        for (const [i, row] of rows.entries()) {
+          const [first, second] = row.toLowerCase().trim().split("_");
+          const output = `${first}${second.replace(
+            second[0],
+            second[0].toUpperCase()
+          )}`;
+          console.log(`${output.padEnd(20)}${"ok".repeat(i + 1)}`);
+        }
+      });
+    </script>
+  </body>
+</html>
