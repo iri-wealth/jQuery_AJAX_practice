@@ -191,3 +191,37 @@ const secureBooking = function () {
 const booker = secureBooking();
 booker();
 booker();
+console.dir(booker); //dir gives opportunity to see the function properties and details
+
+let f; //here we created an empty function
+const g = function () {
+  const a = 23;
+  f = function () {
+    //here we assign variable to the empty function
+    console.log(a * 2);
+  };
+};
+g(); //here we call the function
+f();
+console.dir(f);
+
+const boardPassengers = function (n, wait) {
+  //const perGroup = n / 3;
+  setTimeout(function () {
+    console.log("we are now boarding all " + perGroup + " passengers");
+  }, 1000); //this function will be executed after 1000 mili-seconds or 1s
+  console.log("will start calling in " + wait + " seconds");
+};
+
+const perGroup = 1000;
+
+boardPassengers(180, 3);
+
+//exercise:
+(function () {
+  const header = document.querySelector("h1");
+  header.style.color = "violet";
+  document.querySelector("body").addEventListener("click", function () {
+    header.style.color = "red";
+  });
+})();
