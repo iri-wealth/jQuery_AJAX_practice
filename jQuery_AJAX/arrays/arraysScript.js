@@ -168,12 +168,50 @@ const createUsernames = function (accs) {
     acc.user = acc.owner
       .toLowerCase()
       .split(" ")
-      .map((name) => name.charAt(0).toUpperCase() + name.slice(1));
+      .map((name) => name[0])
+      .join(" "); //name.charAt(0).toUpperCase() + name.slice(1));
     //return username;
   });
 };
 createUsernames(accounts); //stw
-console.log(accounts);
+//console.log(accounts);
+
+const updateUI = function (acc) {
+  //Display movements
+  displayMovements(acc.movements);
+  //Display balance
+  calcDisplayBalance(acc);
+  //Display summary
+  calcDisplaySummary(acc);
+};
+
+//const account = accounts.find((acc) => acc.owner === "Jessica Davis");
+//console.log(account);
+
+//Event handler
+let currentAccount;
+
+btnLogin.addEventListener("click", function (e) {
+  //prevent form from submitting
+  e.preventDefault();
+
+  currentAccount = accounts.find(
+    (acc) => acc.username === inputLoginUsername.value
+  );
+  console.log(currentAccount);
+
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //display UI a welcome message
+    labelWelcome.textContent = "Welcome " + currentAccount.owner.split(" ")[0];
+    containerApp.style.opacity = 100;
+    //clear input fields
+    inputLoginUsername.value = inputLoginPin.value = "";
+    inputLoginPin.blur();
+
+    //Update UI
+    updateUI(currentAccount);
+  }
+});
 
 //accumulator = acc; cur = current element; acc is like a sum of all the previous values on the account
 
@@ -266,3 +304,8 @@ const movements1 = [200, 450, -400, 3000, -650, -130, 70, 1300];*/
 
 const arr5 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 console.log(Math.max(...arr5));*/
+// The find ethod
+
+const firstWithdrawal = movements.find((mov) => mov < 0);
+console.log(movements);
+console.log("This is a first withdrawal: " + firstWithdrawal);

@@ -1,7 +1,7 @@
 /*
  * Use this CSS to learn some intersting techniques,
  * in case you're wondering how I built the UI.
- * Have fun! 😁, 
+ * Have fun! 😁
  */
 
 * {
@@ -18,7 +18,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   color: #444;
-  background-color: #c4c0c0;
+  background-color: #f3f3f3;
   height: 100vh;
   padding: 2rem;
 }
