@@ -330,7 +330,7 @@ btnLoan.addEventListener("click", function (e) {
       // Reset timer
       clearInterval(timer);
       timer = startLogOutTimer();
-    }, 2500);
+    }, 2000);
   }
   inputLoanAmount.value = "";
 });
