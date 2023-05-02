@@ -97,7 +97,7 @@ body {
 }
 
 p {
-  color: #666;
+  color: #a7a5a5;
 }
 
 /* This is BAD for accessibility! Don't do in the real world! */
@@ -160,14 +160,14 @@ img {
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: var(--color-primary);
-  color: #222;
+  color: #bd1414;
 }
 
 .nav__link--btn:hover,
 .nav__link--btn:active {
   color: inherit;
   background-color: var(--color-primary-darker);
-  color: #333;
+  color: #b81313;
 }
 
 /* HEADER */
