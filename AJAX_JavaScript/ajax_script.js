@@ -66,3 +66,67 @@ createImage("image2.jpg")
   .catch((err) => {
     console.log(err, "image not found");
   });
+
+/* const getCountries = async function () {
+  try {
+    const data = await getJSON("https://restcountries.eu/rest/v2/all");
+    console.log(data);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+const whereAmI = async function () {
+  const res = await fetch("https://restcountries.eu/rest/v2/name/Afghanistan");
+  console.log(res);
+};
+// source: https://developer.chrome.com/docs/devtools/network/reference/?utm_source=devtools#analyze
+
+
+const getJSON = function (url, errorMsg = "Error") {
+  return fetch(url).then((response) => {
+    if (!response.ok) throw new Error(errorMsg);
+    return response.json();
+  });
+};
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    const data1 = await getJSON("https://restcountries.eu/rest/v2/name/" + c1);
+    const data2 = await getJSON("https://restcountries.eu/rest/v2/name/" + c2);
+    const data3 = await getJSON("https://restcountries.eu/rest/v2/name/" + c3);
+    console.log(data1, data2, data3);
+  } catch (err) {
+    console.log(err);
+  }
+};
+get3Countries("Afghanistan", "Albania", "Algeria");
+
+const wait = function (s) {
+  return new Promise((resolve) => setTimeout(resolve, s * 1000));
+};
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error("Request took too long!"));
+    }, sec);
+  });
+};*/
+
+//image loading async:
+const imgArr = ["image2.jpg", "image3.jpg"];
+const loadAll = async function (amgArr) {
+  console.log(amgArr);
+  try {
+    const imgs = imgArr.map(async (img) => await createImage(img));
+    const imgsEl = await Promise.all(imgs);
+    console.log(imgsEl);
+    imgsEl.forEach((img) => {
+      img.classList.add("parallel");
+    });
+    //console.log(imgs);
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+loadAll(["image2.jpg", "image3.jpg"]);
