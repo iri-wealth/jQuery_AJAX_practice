@@ -11,8 +11,8 @@ html {
 
 body {
   font-family: system-ui;
-  color: #555;
-  background-color: #f7f7f7;
+  color: #2d1a72;
+  background-color: #a3e1ed;
   min-height: 100vh;
 
   display: flex;
@@ -26,17 +26,17 @@ body {
   align-items: center;
 }
 
-.countries {
+.images {
   /* margin-bottom: 8rem; */
   display: flex;
 
   font-size: 2rem;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
 }
 
 .country {
-  background-color: #fff;
+  background-color: #a4d6ec;
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
   font-size: 1.8rem;
   width: 30rem;
@@ -55,7 +55,7 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  color: #888;
+  color: #538c99;
 }
 
 .neighbour {
@@ -67,7 +67,7 @@ body {
   width: 30rem;
   height: 17rem;
   object-fit: cover;
-  background-color: #eee;
+  background-color: #b9e4f4;
   border-top-left-radius: 0.7rem;
   border-top-right-radius: 0.7rem;
 }
